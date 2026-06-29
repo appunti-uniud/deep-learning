@@ -1,18 +1,22 @@
-\documentclass[12pt, a4paper]{report}
+%!TeX program = lualatex
 
-\input{../../template/preamble}
+\documentclass[oneside]{academica}
+\input{preamble}
 
-\title{\Huge{\textbf{Deep Learning}}}
-\author{\huge{Filippo Merlo}}
+\overtitle{notes for}
+\title{Deep Learning}
+\author{Filippo Merlo}
 \date{2023-2024}
 
 \begin{document}
 
+\frontmatter
+
 \maketitle
-\newpage
-\pdfbookmark[section]{\contentsname}{toc}
+
 \tableofcontents
-\pagebreak
+
+\mainmatter
 
 \chapter{Introduction}
 
@@ -501,9 +505,9 @@ The algorithm code is:
 \end{equation*}
 to be repeated until convergence. $\boldsymbol{j}$ are the indexes, $\boldsymbol{\alpha}$ is the length/size of the step, $\boldsymbol{J}$ is the cost function and $\boldsymbol{\partial}$ is the partial derivative.
 
-\nt{
+\begin{note}
   The gradient of a function represents how small changes on the parameter $\theta_1$ affect the cost function $J(\theta_1)$.
-}
+\end{note}
 
 In the following schema we can see a computational graph of a neural network
 
@@ -731,17 +735,17 @@ Given a feature $x_i$ the mapped feature is
 \end{equation*}
 where $\mu_i$ and $\sigma_i$ area both computed on the training set and are respectively
 
-\dfn{Mean}{
+\begin{definition}[Mean]
   \begin{equation*}
     \mu_i = \frac{1}{m} \sum_{i=1}^{m} x_i
   \end{equation*}
-}
+\end{definition}
 
-\dfn{Standard deviation}{
+\begin{definition}[Standard deviation]
   \begin{equation*}
     \sigma_i = \sqrt{\frac{1}{m-1} \cdot \sum_{i=1}^{m} (x_i - \mu_i)^2}
   \end{equation*}
-}
+\end{definition}
 where $m$ is the number of samples of the training set.
 
 \subsection{MinMax Normalization}
@@ -942,9 +946,9 @@ Let's suppose we are working on the same example of \textit{Figure~\ref{fig:conv
     \end{gather*}
 \end{itemize}
 
-\nt{
+\begin{note}
   $w_1, w_4 \text{ and } w_7$ because are on the same Red channel, so must be seen as a whole.
-}
+\end{note}
 
 \newpage
 
@@ -1097,9 +1101,9 @@ The computational cost of the filter in the left picture is $28 \times 28 \cdot 
 
 \newpage
 
-\nt{
+\begin{note}
   The ``same'' value specified in the filter on the left image, means that the filter is padded with enough zeros to reach the same dimensionality of the input.
-}
+\end{note}
 
 \begin{figure}[h]
   \centering
